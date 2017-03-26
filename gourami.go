@@ -22,17 +22,17 @@ func main() {
 			continue
 		}
 
-		b64JSONprint(split[0])
-		b64JSONprint(split[1])
+		formatAndPrint(split[0])
+		formatAndPrint(split[1])
 	}
 }
 
-// b64JSONprint will "pretty-print" the contents of a base-64 json segment.
+// formatAndPrint will "pretty-print" the contents of a base-64 json segment.
 // it takes in base64-encoded data, with or without padding, and will parse
 // the JSON contents to then print them.
-func b64JSONprint(input string) {
+func formatAndPrint(input string) {
 	context := log.WithFields(log.Fields{
-		"funcName":   "bJSONprint",
+		"funcName":   "formatAndPrint",
 		"sourceFile": "main.go",
 		"input":      input,
 	})
